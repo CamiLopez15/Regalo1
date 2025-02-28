@@ -1,7 +1,7 @@
 const songs = [
-    { title: "QUÍMICA MAYOR-MON LAFERTE", src: "Química Mayor.mp4", cover: "IMAG1.jpeg" },
-    { title: "SABES-REIK", src: "Sabes.mp4", cover: "IMAG2.jpeg" },//revision 
-    { title: "HASTA ESE DÍA- LASSO", src: "Hasta.mp4", cover: "IMAG3.jpeg" }
+    { title: "QUÍMICA MAYOR - MON LAFERTE", src: "Química Mayor.mp4", cover: "IMAG1.jpeg" },
+    { title: "SABES - REIK", src: "Sabes.mp4", cover: "IMAG2.jpeg" },
+    { title: "HASTA ESE DÍA - LASSO", src: "Hasta.mp4", cover: "IMAG3.jpeg" }
 ];
 
 let currentSongIndex = 0;
@@ -9,34 +9,43 @@ const audio = document.getElementById("audio");
 const songTitle = document.getElementById("song-title");
 const cover = document.getElementById("cover");
 const playBtn = document.querySelector(".play-btn");
+const nextBtn = document.querySelector(".next-btn");
+const prevBtn = document.querySelector(".prev-btn");
 
+// Función para alternar play/pause
 function togglePlay() {
     if (audio.paused) {
         audio.play();
-        playBtn.textContent = "⏸";
+        playBtn.textContent = "⏸"; // Cambia el botón a pausa
     } else {
         audio.pause();
-        playBtn.textContent = "▶";
+        playBtn.textContent = "▶"; // Cambia el botón a play
     }
 }
 
+// Función para pasar a la siguiente canción
 function nextSong() {
     currentSongIndex = (currentSongIndex + 1) % songs.length;
     updateSong();
 }
 
+// Función para retroceder a la canción anterior
 function prevSong() {
     currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
     updateSong();
 }
 
+// Función para actualizar la información de la canción y reproducirla automáticamente
 function updateSong() {
     audio.src = songs[currentSongIndex].src;
     cover.src = songs[currentSongIndex].cover;
     songTitle.textContent = songs[currentSongIndex].title;
     audio.play();
-    playBtn.textContent = "⏸";
+    playBtn.textContent = "⏸"; // Asegurar que el botón muestre "pausa"
 }
+
+// Cuando la canción termine, pasa automáticamente a la siguiente
+audio.addEventListener("ended", nextSong);
 
 //////////
 // FONDO DE FLORESSSSS
