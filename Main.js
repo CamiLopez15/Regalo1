@@ -1,6 +1,6 @@
 const songs = [
     { title: "QUÍMICA MAYOR-MON LAFERTE", src: "Química Mayor.mp4", cover: "IMAG1.jpeg" },
-    { title: "SABES-REIK", src: "Sabes.mp4", cover: "IMAG2.jpeg" },
+    { title: "SABES-REIK", src: "Sabes.mp4", cover: "IMAG2.jpeg" },//revision 
     { title: "HASTA ESE DÍA- LASSO", src: "Hasta.mp4", cover: "IMAG3.jpeg" }
 ];
 
