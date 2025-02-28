@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Spotify</title>
+    <link rel="stylesheet" href="Main.css">
+</head>
+<body>
+    <div>
+        <h1>TE AMODORO CON MI VIDA</h1>
+    </div>
+    
+    <canvas id="flower-canvas"></canvas>
+    <div class="player">
+        <img id="cover" src="IMAG1.jpeg" alt="Song Cover">
+        <h2 id="song-title">QUÍMICA MAYOR</h2>
+        <audio id="audio" src="Química Mayor.mp4"></audio>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+        <div class="controls">
+            <button class="control-btn" onclick="prevSong()">⏮</button>
+            <button class="play-btn" onclick="togglePlay()">▶</button>
+            <button class="control-btn" onclick="nextSong()">⏭</button>
+        </div>
+        <div class="device-bar">Devices Available</div>
+    </div>
+
+    <script src="Main.js"></script>
+</body>
+</html>
